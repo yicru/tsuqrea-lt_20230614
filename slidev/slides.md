@@ -47,7 +47,7 @@ class: px-20
 
 <div grid="~ cols-2 gap-2" m="-t-2">
 
-<a href='https://github.com/yicru/gql-file-upload-minimum-example' target='_blank'>
+<a href='https://github.com/warrenday/graphql-network-inspector/issues/101' target='_blank'>
     <img src="https://opengraph.githubassets.com/2f76a441b64c518d96afebb0a4cd2fd3945c7bae8cd784c6ab6a9102934f9dee/warrenday/graphql-network-inspector/issues/101">
 </a>
 
