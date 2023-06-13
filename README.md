@@ -2,6 +2,10 @@
 
 2023-06-14LT資料@TSUQREA
 
+- https://github.com/yicru/tsuqrea-lt_20230614
+- https://tsuqrea-lt-20230614-sample.vercel.app
+- https://tsuqrea-lt-20230614-slidev.vercel.app
+
 ### Next.jsプロジェクトの作成
 ```shell
 npx create-next-app@latest web --ts --eslint --app --src-dir --tailwind --import-alias "@/*"
