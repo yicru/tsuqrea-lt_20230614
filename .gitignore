@@ -132,3 +132,4 @@ dist
 
 # IDE
 .idea
+.vercel
