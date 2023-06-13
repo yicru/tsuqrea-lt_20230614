@@ -22,6 +22,7 @@ const { handleRequest } = createYoga({
 
       type Mutation {
         addTodo(text: String!): Todo!
+        toggleTodo(id: ID!): Todo!
       }
     `,
     resolvers: {
@@ -34,6 +35,12 @@ const { handleRequest } = createYoga({
         addTodo: (_, { text }) => {
           const todo = { id: todos.length + 1, text, completed: false }
           todos.push(todo)
+          return todo
+        },
+        toggleTodo: (_, { id }) => {
+          const todo = todos.find((todo) => todo.id == id)
+          if (!todo) throw new Error(`Todo with id ${id} not found`)
+          todo.completed = !todo.completed
           return todo
         },
       },
