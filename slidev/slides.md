@@ -68,6 +68,18 @@ class: px-20
 - **運用費がかからない**
 
 ---
+class: px-20
+---
+
+# 候補は？
+
+- **tRPC**
+- **Firebase, Supabase**
+- **Next.js API Route**
+- **Low Code Tools (Hasura?)**
+- **garph**
+
+---
 layout: center
 ---
 
@@ -78,6 +90,54 @@ layout: center
 ---
 
 # やってみましょう
+
+---
+layout: center
+---
+
+```shell
+npx create-next-app@latest
+```
+
+---
+layout: center
+---
+
+https://the-guild.dev/graphql/yoga-server/docs/integrations/integration-with-nextjs#example
+
+<div grid="~ cols-3 gap-10" m="-t-2">
+
+<div grid="~ col-span-2">
+```tsx
+import { createYoga, createSchema } from 'graphql-yoga'
+
+const { handleRequest } = createYoga({
+  schema: createSchema({
+    typeDefs: /* GraphQL */ `
+      type Query {
+        greetings: String
+      }
+    `,
+    resolvers: {
+      Query: {
+        greetings: () =>
+          'This is the `greetings` field of the root `Query` type'
+      }
+    }
+  }),
+
+  graphqlEndpoint: '/api/graphql',
+
+  fetchAPI: { Response }
+})
+
+export { handleRequest as GET, handleRequest as POST }
+```
+</div>
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fthe-guild.dev%2Fgraphql%2Fyoga-server%2Fdocs%2Fintegrations%2Fintegration-with-nextjs%23example">
+
+</div>
 
 ---
 class: px-20
