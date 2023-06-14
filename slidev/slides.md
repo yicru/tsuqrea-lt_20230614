@@ -105,10 +105,8 @@ layout: center
 
 https://the-guild.dev/graphql/yoga-server/docs/integrations/integration-with-nextjs#example
 
-<div grid="~ cols-3 gap-10" m="-t-2">
-
-<div grid="~ col-span-2">
 ```tsx
+// Next.js Custom Route Handler: https://nextjs.org/docs/app/building-your-application/routing/router-handlers
 import { createYoga, createSchema } from 'graphql-yoga'
 
 const { handleRequest } = createYoga({
@@ -121,23 +119,20 @@ const { handleRequest } = createYoga({
     resolvers: {
       Query: {
         greetings: () =>
-          'This is the `greetings` field of the root `Query` type'
+                'This is the `greetings` field of the root `Query` type'
       }
     }
   }),
 
+  // While using Next.js file convention for routing, we need to configure Yoga to use the correct endpoint
   graphqlEndpoint: '/api/graphql',
 
+  // Yoga needs to know how to create a valid Next response
   fetchAPI: { Response }
 })
 
 export { handleRequest as GET, handleRequest as POST }
 ```
-</div>
-
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fthe-guild.dev%2Fgraphql%2Fyoga-server%2Fdocs%2Fintegrations%2Fintegration-with-nextjs%23example">
-
-</div>
 
 ---
 class: px-20
